@@ -42,7 +42,10 @@ mongosetup:
 aem61:
   hostname: aem
   build: aem/
-  environment:
-    - ENV CQ_JVM_OPTS="-server -Xmx1524M -Xms512M -XX:MaxPermSize=512M -mx4g -jar -r crx3,crx3mongo -Doak.mongo.uri=mongodb://mongo1:27017,mongo2:27017"
   ports:
     - "4502:4502"
+  links:
+    - mongo1:mongo1
+    - mongo2:mongo2
+  command:
+     ["java", "-XX:MaxPermSize=512M", "-mx4g", "-jar", "aem6-author-p4502.jar", "-r", "crx3,crx3mongo", "-Doak.mongo.uri=mongodb://mongo1:27017,mongo2:27017"]
