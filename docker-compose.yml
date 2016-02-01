@@ -38,3 +38,10 @@ mongosetup:
   volumes:
     - ./scripts:/scripts
   entrypoint: [ "/scripts/setup.sh" ]
+
+aem61:
+  hostname: aem
+  build: aem/
+  image: aem_aem61
+  environment:
+    - ENV CQ_JVM_OPTS="-server -Xmx1524M -Xms512M -XX:MaxPermSize=512M -mx4g -jar -r crx3,crx3mongo -Doak.mongo.uri=mongodb://mongo1:27017,mongo2:27017"

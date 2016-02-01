@@ -10,11 +10,6 @@ until curl http://${MONGODB1}:28017/serverStatus\?text\=1 2>&1 | grep uptime | h
   sleep 1
 done
 
-echo curl http://${MONGODB1}:28017/serverStatus\?text\=1 2>&1 | grep uptime | head -1
-echo "Started.."
-
-
-echo SETUP.sh time now: `date +"%T" `
 mongo ${MONGODB1}:27017 --eval "rs.initiate(rsconf = {_id: \"aem6\", members: [{_id: 0, host: \"${MONGODB1}:27017\"}]})"
 mongo ${MONGODB1}:27017 --eval "rs.add(\"${MONGODB2}:27017\")"
 mongo ${MONGODB1}:27017 --eval "rs.addArb(\"${MONGODB3}:27017\")"
