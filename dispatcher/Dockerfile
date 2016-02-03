@@ -24,6 +24,8 @@ ADD conf/dispatcher.conf /etc/apache2/conf-available/dispatcher.conf
 RUN ln -s /etc/apache2/conf-available/dispatcher.conf /etc/apache2/conf-enabled/dispatcher.conf
 ADD conf/dispatcher.any /etc/apache2/dispatcher/dispatcher.any
 
+RUN chown www-data /var/www/html
+
 EXPOSE 80 443
 
 ENTRYPOINT ["/usr/sbin/apache2ctl"]
