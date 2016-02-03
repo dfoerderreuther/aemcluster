@@ -1,0 +1,10 @@
+dispatcher:
+ hostname: dispatcher
+ build: .
+ extra_hosts:
+ - "aempub:192.168.99.100"
+ ports:
+   - "80:80"
+   - "443:443"
+# links:
+#   - aempub:aempub
