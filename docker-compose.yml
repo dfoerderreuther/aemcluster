@@ -73,3 +73,4 @@ dispatcher:
    - "443:443"
  links:
    - aempub:aempub
+# restart: always
