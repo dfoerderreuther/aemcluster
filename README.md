@@ -1,6 +1,6 @@
 # aemcl
 
-## General: Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-compose will use "aemcl" as project name and the following commands will not work without changing.
+''' General: Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-compose will use "aemcl" as project name and the following commands will not work without changing. '''
 
 ## mongo cluster:
 
