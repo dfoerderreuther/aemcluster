@@ -4,13 +4,13 @@
 
 Please copy cq-quickstart-6.1.0.jar and license.properties to aem/files/.
 
-## mongo cluster:
+## Run the full setup with mongo cluster:
 
     docker-compose up
 
-This will boot up a mongo cluster with three nodes (primary, secondary and arbiter), an aem author instance which connects to the mongo cluster, one aem publish instance and one apache dispatcher.
+This will boot up a mongo cluster with three nodes (primary, secondary and arbiter), an aem author instance which connects to the mongo cluster, one aem publish instance and one apache dispatcher. The first boot up takes a while.
 
-### or if you already have a backup of the database:
+### or if you already have a backup of the database, you can start db and aem separately and restore the backup:
 
 Boot up mongo cluster
 
@@ -23,10 +23,11 @@ Optional:
     docker-compose -f docker-compose-aem-mongo-cluster.yml up
 
 
-## tar cluser:
+## Run tar:
 
-    docker-compose -f docker-compose-aem-tar-cluster.yml up
+    docker-compose -f docker-compose-aem-tar.yml up
 
+This will boot up one author instance, one publish instance and one dispatcher.
 
 ## init replication:
 
