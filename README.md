@@ -1,15 +1,8 @@
 # aemcl
 
-mongo status:
+general:
 
-  mongo docker:27017 --eval 'rs.status();'
-
-mongo backup:
-
-  mongodump --host docker --port 27017 --out backup/
-
-  mongorestore --host docker --port 27017 backup/
-
+Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-compose will use "aemcl" as project name and the following commands will not work without changing.
 
 ## mongo cluster:
 
@@ -39,10 +32,22 @@ curl --data transportUri=http://aempub:4503/bin/receive?sling:authRequestLogin=1
 
 docker-compose can't set ip of dispatcher in aempub because a link cycle is not possible.
 
-curl --data transportUri=http://172.17.0.5:80/dispatcher/invalidate.cache --user admin:admin http://docker:4502/etc/replication/agents.publish/flush/jcr%3Acontent
+curl --data transportUri=http://172.17.0.8:80/dispatcher/invalidate.cache --user admin:admin http://docker:4502/etc/replication/agents.publish/flush/jcr%3Acontent
 
 curl -u admin:admin -X POST -F path="/etc/replication/agents.publish/flush" -F cmd="activate" http://docker:4502/bin/replicate.json
 
+
+## mongo
+
+mongo status:
+
+  mongo docker:27017 --eval 'rs.status();'
+
+mongo backup:
+
+  mongodump --host docker --port 27017 --out backup/
+
+  mongorestore --host docker --port 27017 backup/
 
 ## bash:
 
