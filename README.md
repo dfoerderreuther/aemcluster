@@ -10,7 +10,7 @@ Please copy cq-quickstart-6.1.0.jar and license.properties to aem/files/.
 
 This will boot up a mongo cluster with three nodes (primary, secondary and arbiter), an aem author instance which connects to the mongo cluster, one aem publish instance and one apache dispatcher. The first boot up takes a while.
 
-### or if you already have a backup of the database, you can start db and aem separately and restore the backup:
+#### or if you already have a backup of the database, you can start db and aem separately and restore the backup:
 
 Boot up mongo cluster
 
