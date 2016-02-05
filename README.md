@@ -32,7 +32,6 @@ Optional:
 docker-compose can't set ip of dispatcher in aempub because a link cycle is not possible.
 
     curl --data transportUri=http://172.17.0.8:80/dispatcher/invalidate.cache --user admin:admin http://docker:4502/etc/replication/agents.publish/flush/jcr%3Acontent
-
     curl -u admin:admin -X POST -F path="/etc/replication/agents.publish/flush" -F cmd="activate" http://docker:4502/bin/replicate.json
 
 
