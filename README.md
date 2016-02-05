@@ -2,11 +2,17 @@
 
 **General: Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-compose will use "aemcl" as project name and the following commands will not work without changing.**
 
+Please copy cq-quickstart-6.1.0.jar and license.properties to aem/files/.
+
 ## mongo cluster:
 
     docker-compose up
 
+This will boot up a mongo cluster with three nodes (primary, secondary and arbiter), an aem author instance which connects to the mongo cluster, one aem publish instance and one apache dispatcher.
+
 ### or if you already have a backup of the database:
+
+Boot up mongo cluster
 
     docker-compose -f docker-compose-mongo.yml up
 
@@ -15,7 +21,6 @@ Optional:
     mongorestore --host docker --port 27017 backup/
 
     docker-compose -f docker-compose-aem-mongo-cluster.yml up
-
 
 
 ## tar cluser:
@@ -45,7 +50,10 @@ mongo backup:
 
     mongodump --host docker --port 27017 --out backup/
 
+or
+
     mongorestore --host docker --port 27017 backup/
+
 
 ## bash:
 
