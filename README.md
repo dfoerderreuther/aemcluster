@@ -20,10 +20,10 @@ Optional:
 
     mongorestore --host docker --port 27017 backup/
 
-    docker-compose -f docker-compose-aem-mongo-cluster.yml up
+    docker-compose -f docker-compose-aem-mongo.yml up
 
 
-## Run aem tar:
+## Run aem with default tar datastore:
 
     docker-compose -f docker-compose-aem-tar.yml up
 
