@@ -1,0 +1,9 @@
+dispatcher:
+ hostname: dispatcher
+ build: dispatcher/
+ ports:
+   - "80:80"
+   - "443:443"
+ external_links:
+   - aemcluster_aempub_1:aempub
+# restart: always

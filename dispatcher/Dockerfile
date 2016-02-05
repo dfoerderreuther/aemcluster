@@ -24,6 +24,11 @@ ADD conf/dispatcher.conf /etc/apache2/conf-available/dispatcher.conf
 RUN ln -s /etc/apache2/conf-available/dispatcher.conf /etc/apache2/conf-enabled/dispatcher.conf
 ADD conf/dispatcher.any /etc/apache2/dispatcher/dispatcher.any
 
+ADD conf/dispatcher-vhost.conf /etc/apache2/sites-available/dispatcher-vhost.conf
+RUN rm /etc/apache2/sites-enabled/000-default.conf
+RUN rm /var/www/html/index.html
+RUN ln -s /etc/apache2/sites-available/dispatcher-vhost.conf /etc/apache2/sites-enabled/100-dispatcher.conf
+
 RUN chown www-data /var/www/html
 
 EXPOSE 80 443
