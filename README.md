@@ -8,7 +8,7 @@ Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-co
 
 docker-compose up
 
-### or
+### or if you already have a backup of the database:
 
 docker-compose -f docker-compose-mongo.yml up
 
