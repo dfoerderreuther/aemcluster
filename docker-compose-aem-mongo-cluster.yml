@@ -18,8 +18,8 @@ aemaut:
   ports:
     - "4502:4502"
   external_links:
-    - mongo1:mongo1
-    - mongo2:mongo2
+    - aemcluster_mongo1_1:mongo1
+    - aemcluster_mongo2_1:mongo2
   links:
     - aempub:aempub
   command:

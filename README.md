@@ -17,7 +17,7 @@ docker-compose up
 
 ### or
 
-docker-compose -f docker-compose-aem-mongo.yml up
+docker-compose -f docker-compose-mongo.yml up
 
 Optional:
 mongorestore --host docker --port 27017 backup/
