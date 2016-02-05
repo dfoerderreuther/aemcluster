@@ -23,7 +23,7 @@ Optional:
     docker-compose -f docker-compose-aem-mongo-cluster.yml up
 
 
-## Run tar:
+## Run aem tar:
 
     docker-compose -f docker-compose-aem-tar.yml up
 
