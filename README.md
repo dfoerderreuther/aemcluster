@@ -1,6 +1,4 @@
-# aemcl
-
-**General: Please rename the cloned directory from aemcl to aemcluster. Otherwise docker-compose will use "aemcl" as project name and the following commands will not work without changing.**
+# aemcluster
 
 Please copy cq-quickstart-6.1.0.jar and license.properties to aem/files/.
 
