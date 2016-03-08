@@ -17,6 +17,8 @@ Boot up mongo cluster
 Optional:
 
     mongorestore --host docker --port 27017 backup/
+    
+Boot up aem with mongo configuration
 
     docker-compose -f docker-compose-aem-mongo.yml up
 
